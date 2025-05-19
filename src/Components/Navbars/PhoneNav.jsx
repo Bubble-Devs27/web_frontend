@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from "motion/react";
 const PhoneNav = () => {
   return (
-    <motion.div className="bg-transparent" initial = {{y :-30 , opacity :0}} animate ={{y :0 , opacity :1}} transition={{duration :0.8}}  >
+    <motion.div className="bg-transparent" initial = {{y :-30 , opacity :0}} animate ={{y :0 , opacity :1}} transition={{duration :0.8 ,delay :1}}  >
       {/* Navbar container */}
       <nav className="flex items-center justify-between px-6 py-4">
         {/* Logo */}

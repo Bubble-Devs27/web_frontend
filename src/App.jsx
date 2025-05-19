@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'
 import SplashScreen from './SplashScreen/SplashScreen';
-import HomePage from './HomePage/HomePAge';
+import HomePage from './HomePage/HomePage';
 function App() {
    const [isLoading, setIsLoading] = useState(true);
 
