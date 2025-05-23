@@ -11,8 +11,7 @@ const Hero = () => {
             <h1 className='text-5xl md:text-7xl text-[#5D2821] tracking-widest mb-2.5' style={{fontFamily : 'Anton'}}>YOUR</h1>
             <h1 className='text-5xl md:text-7xl text-[#5D2821] tracking-widest mb-2.5' style={{fontFamily : 'Anton'}}>DOOSRTEP</h1>
         </motion.div>
-        <motion.div>
-        </motion.div>
+        
     </div>
   )
 }
