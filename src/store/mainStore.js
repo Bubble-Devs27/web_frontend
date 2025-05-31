@@ -1,8 +1,13 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware';
+const urls = {
+  base : 'http://192.168.29.36:5000',
+  prod : 'https://bubbles-backend-pz43.onrender.com'
+}
 export const useStore = create((set) => ({
   user: null,
-  baseURL : 'http://192.168.29.36:5000',
+  baseURL : urls.prod,
+  prod :"https://bubbles-backend-pz43.onrender.com"
   // Actions
   
 }))
