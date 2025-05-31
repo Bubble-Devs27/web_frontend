@@ -2,7 +2,7 @@ import React from 'react'
 import '@fontsource/anton';
 import { motion } from "motion/react";
 // Supports weights 400-700
-import pic from '../../assets/topbg.png'
+import pic from '../../assets/topBg.png'
 const Hero = () => {
   return (
     <div className='flex mt-8 px-6 justify-between'>
