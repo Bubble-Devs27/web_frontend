@@ -53,7 +53,7 @@ const GetWash = () => {
     await getWashDetails(token); // Wait for the request to finish
 
     if (isPolling) {
-      pollingTimeoutId = setTimeout(() => poll(), 10000); // 10 seconds
+      pollingTimeoutId = setTimeout(() => poll(), 40000); // 10 seconds
     }
   };
 
