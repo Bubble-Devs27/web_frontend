@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'
 import SplashScreen from './SplashScreen/SplashScreen';
-import HomePage from './HomePage/HomePage';
+import HomePage from '../src/HomePage/HomePage';
 function App() {
    const [isLoading, setIsLoading] = useState(true);
-
+   
   useEffect(() => {
     // Simulate loading time (e.g., fetching data)
     const timer = setTimeout(() => {
@@ -17,8 +17,8 @@ function App() {
 
   return (
    <>
-   {/* {isLoading ? <SplashScreen/> : <HomePage/>} */}
-   <HomePage/>
+   {isLoading ? <SplashScreen/> : <HomePage/>}
+ 
    </>
   );
 }

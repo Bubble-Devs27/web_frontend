@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "motion/react";
 import Divider from '../Divider/Divider';
 import {  Link } from 'react-router-dom';
+import { useCart } from '../../store/mainStore';
 const PhoneNav = () => {
+  const [token , setToken] =useState(null)
+  const isLogin = useCart((s)=>s.isLogin)
+  useEffect(()=>{
+    const token = localStorage.getItem("TOKEN")
+    setToken(isLogin)
+  },[isLogin])
   return (
     <>
     <motion.div className="sm:hidden bg-transparent" initial = {{y :-30 , opacity :0}} animate ={{y :0 , opacity :1}} transition={{duration :0.8 ,delay :1}}  >
@@ -27,11 +34,14 @@ const PhoneNav = () => {
           <div className="h-6 w-px bg-gray-300 mx-2"></div>
           
           {/* Dropdown menu button */}
-          <button className="p-0.5 bg-[#5D2821] rounded-2xl"  >
+          {/* <button className="p-0.5 bg-[#5D2821] rounded-2xl"  >
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#F7EFDD]">
               <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </button> */}
+           {isLogin ?  <Link className="" to ="/profile">
+           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+          </Link> : <Link to='/login'>LOGIN</Link>}
         </div>
       </nav>
     </motion.div>
@@ -39,9 +49,7 @@ const PhoneNav = () => {
     <motion.div className='hidden sm:flex justify-between px-6' initial = {{y :-30 , opacity :0}} animate ={{y :0 , opacity :1}} transition={{duration :0.8 ,delay :1}} >
         <div className='text-red-900 font-semibold text-2xl  flex justify-center items-center'> BubbleXwash </div>
         <div className=' text-red-900 flex justify-center items-center'> 
-            <Link to='/services' className='px-5 py-3'>Services</Link>
-            <Link to='/packages' className='px-5 py-3'>Packages</Link>
-            <Link to='/orders' className='px-5 py-3'>Orders</Link>
+            
             <Link to="/admin" className="h-6 w-px bg-gray-300 mx-2"></Link>
 
            {/* Bell notification button */}
@@ -51,7 +59,9 @@ const PhoneNav = () => {
               <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Link>
-          <Link to='/login'>LOGIN</Link>
+          {isLogin ?  <Link className="p-2" to ="/profile">
+           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+          </Link> : <Link to='/login'>LOGIN</Link>}
          </div>
         
     </motion.div>
